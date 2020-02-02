@@ -94,5 +94,19 @@ nohup sh /home/pi/.datadog-agent/bin/agent &
 You will get metrics monitored on Datadog dashboard.
 
 ![](img/datadog_dashboard.png)
+
+## Send sensor data to DataDog
+
+You can send custom data to datadog using [python library](https://github.com/DataDog/datadogpy).
+- [https://docs.datadoghq.com/developers/metrics/dogstatsd_metrics_submission/?tab=python](https://docs.datadoghq.com/developers/metrics/dogstatsd_metrics_submission/?tab=python)
+
+- This willl send custom metrics to datadog agent running locally. Then Agent aggregate them to Datadog server.
+
+- Please see/run [script](scripts_client/bme280_datadog.py).
+
+Now you can see the data coming from a sensor in Datadog dashboard.
+
+![](img/custom_metrics.png)
+
 ## Future TODO  
-- [____] Set up datadog dashboard to monitor sensor data.
+- [____] Set up datadog dashboard by Terrarorm.

@@ -29,3 +29,7 @@ mkdir ~/data_dir
 # install python-consul
 sudo pip install python-consul
 
+
+# install python lib for datadog
+sudo pip install datadog
+
