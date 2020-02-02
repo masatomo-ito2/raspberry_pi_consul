@@ -11,6 +11,8 @@ Demo to install consul on Raspberry Pi. This demo will:
 - Sensor
   - [BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)
 
+![](img/DSC_0097.JPG)
+
 ## Hardware set up
 
 ### Raspberry PI
@@ -76,6 +78,12 @@ sudo systemctl start consul
 - Use `consul exec` to get/update data from host.
   - ```consul exec -node=raspberrypi python /home/pi/raspberry_pi_consul/scripts_client/bme280_sample.py```
 
+## Datadog setting
+
+Installation
+```console
+DD_API_KEY=xxxxxxxxxxxxxxxx sh -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
+```
 
 ## Future TODO  
 - [____] Set up datadog dashboard to monitor sensor data.
