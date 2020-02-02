@@ -3,6 +3,7 @@
 Demo to install consul on Raspberry Pi. This demo will:
 - Create consul cluster with Raspberry PI.
 - Read sensor data (Temprature/Pressure/Humidity) and write them to Consul K/V
+- Install DataDog agent to monitor metrics.
 
 ## Hardware used in this demo
 
@@ -20,7 +21,7 @@ Demo to install consul on Raspberry Pi. This demo will:
     - https://www.raspberrypi.org/downloads/raspbian/
 
 ### Sensor
-  - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/readisng-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
+  - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/reading-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
 
 ## Software set up
 ### Raspberry PI
@@ -85,5 +86,13 @@ Installation
 DD_API_KEY=xxxxxxxxxxxxxxxx sh -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
 ```
 
+To run, dogstatsd:
+```shell
+nohup sh /home/pi/.datadog-agent/bin/agent &
+```
+
+You will get metrics monitored on Datadog dashboard.
+
+![](img/datadog_dashboard.png)
 ## Future TODO  
 - [____] Set up datadog dashboard to monitor sensor data.
