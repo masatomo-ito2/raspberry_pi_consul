@@ -13,15 +13,15 @@ Demo to install consul on Raspberry Pi. This demo will:
 
 ## Hardware set up
 
-- Raspberry PI
+### Raspberry PI
   - OS install
     - https://www.raspberrypi.org/downloads/raspbian/
 
-- Sensor
+### Sensor
   - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/readisng-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
 
 ## Software set up
-- Raspberry PI
+### Raspberry PI
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
   - Run [1.install_software.sh](./scripts_client/1.install_software.sh)
@@ -50,12 +50,9 @@ WantedBy=multi-user.target
 EOF
 ```
 
-```shell
-sudo systemctl enable consul
-sudo systemctl start consul
-```
 
-- Consul server
+
+### Consul server
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
 
@@ -64,7 +61,10 @@ sudo systemctl start consul
 1. Start consul server **on host machine**
   - Run [1.start_server.sh](./scripts_server/1.start_server.sh)
 2. Start consul client **on Raspberry PI**
-  - Run [2.start_consul.sh](./scripts_client/2.start_consul.sh)
+```shell
+sudo systemctl enable consul
+sudo systemctl start consul
+```
 
 ## Read the sensor data
 
