@@ -7,4 +7,5 @@
 #		exit 1
 #fi
 
-ssh pi@192.168.0.114 
+RASPBERRY_PI=192.168.0.114
+ssh pi@${RASPBERRY_PI}

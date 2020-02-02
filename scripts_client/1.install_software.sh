@@ -16,6 +16,16 @@ pushd /usr/local/bin
 unzip ${CONSUL_ZIP}
 popd
 
+# config file
+cat <<EOF> ~/config.json
+{
+        "disable_remote_exec": false
+}
+EOF
+
+# data directory
+mkdir ~/data_dir
+
 # install python-consul
 sudo pip install python-consul
 
