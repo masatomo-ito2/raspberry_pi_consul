@@ -16,16 +16,45 @@ Demo to install consul on Raspberry Pi. This demo will:
 - Raspberry PI
   - OS install
     - https://www.raspberrypi.org/downloads/raspbian/
-  - Install necessary softwares
 
 - Sensor
-  - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/reading-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
+  - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/readisng-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
 
 ## Software set up
 - Raspberry PI
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
   - Run [1.install_software.sh](./scripts_client/1.install_software.sh)
+  - Systemd
+```shell
+sudo cat <<EOF> /etc/systemd/system/consul.service
+[Unit]
+Description="HashiCorp Consul - A service mesh solution"
+Documentation=https://www.consul.io/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/home/pi/config.json
+
+[Service]
+Type=notify
+User=pi
+Group=pi
+ExecStart=/usr/local/bin/consul agent -join 192.168.0.150 -data-dir=/home/pi/data_dir -config-file=/home/pi/config.json
+ExecReload=/usr/local/bin/consul reload
+KillMode=process
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+```shell
+sudo systemctl enable consul
+sudo systemctl start consul
+```
+
 - Consul server
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
@@ -45,10 +74,8 @@ Demo to install consul on Raspberry Pi. This demo will:
   - [bme280_sample.py](./scripts_client/bme280_sample.py)
   - `python bme280_sample.py`
 - Use `consul exec` to get/update data from host.
-  - ```shell
-consul exec -node=raspberrypi python /home/pi/raspberry_pi_consul/scripts_client/bme280_sample.py
-```
+  - ```consul exec -node=raspberrypi python /home/pi/raspberry_pi_consul/scripts_client/bme280_sample.py```
 
-## Future TODO
-- [____] On Raspberry PI, set up systemd　to start consul automatically.
+
+## Future TODO  
 - [____] Set up datadog dashboard to monitor sensor data.

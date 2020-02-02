@@ -11,7 +11,7 @@ sudo pip install smbus
 
 CONSUL_VERSION=1.6.2
 CONSUL_ZIP=/tmp/consul.zip
-wget -O ${CONSUL_ZIP} https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_arm64.zip
+wget -O ${CONSUL_ZIP} https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_armhfv6.zip
 pushd /usr/local/bin
 unzip ${CONSUL_ZIP}
 popd
