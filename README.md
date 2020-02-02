@@ -69,6 +69,7 @@ sudo systemctl enable consul
 sudo systemctl start consul
 ```
 
+
 ## Read the sensor data
 
 - You can read the raw sensor data with [I2C communication protocol](https://en.wikipedia.org/wiki/I%C2%B2C):
@@ -78,6 +79,21 @@ sudo systemctl start consul
   - `python bme280_sample.py`
 - Use `consul exec` to get/update data from host.
   - ```consul exec -node=raspberrypi python /home/pi/raspberry_pi_consul/scripts_client/bme280_sample.py```
+
+
+### Get the data in K/V
+
+The sensor data are stored in Consul K/V. You can read them via:
+```shell
+consul kv get pi/temp
+consul kv get pi/pres
+consul kv get pi/hum
+```
+
+Or From UI:
+
+![](img/consul_ui.png)
+
 
 ## Datadog setting
 
@@ -94,6 +110,7 @@ nohup sh /home/pi/.datadog-agent/bin/agent &
 You will get metrics monitored on Datadog dashboard.
 
 ![](img/datadog_dashboard.png)
+
 
 ## Send sensor data to DataDog
 
