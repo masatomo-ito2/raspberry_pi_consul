@@ -94,6 +94,11 @@ consul kv get pi/pres
 consul kv get pi/hum
 ```
 
+You can also watch the K/V with `watch` command for any change.
+```shell
+consul watch -type=key -key=pi/temp "jq -r .Value | base64 -D && echo"
+```
+
 Or From UI:
 
 ![](img/consul_ui.png)
@@ -124,6 +129,7 @@ You can send custom data to datadog using [python library](https://github.com/Da
 - This willl send custom metrics to datadog agent running locally. Then Agent aggregate them to Datadog server.
 
 - Please see/run [script](scripts_client/bme280_datadog.py).
+  - ```nohup python scripts_client/bme280_datadog.py &```
 
 Now you can see the data coming from a sensor in Datadog dashboard.
 
