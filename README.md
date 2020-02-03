@@ -19,9 +19,13 @@ Demo to install consul on Raspberry Pi. This demo will:
 ### Raspberry PI
   - OS install
     - https://www.raspberrypi.org/downloads/raspbian/
+  - Network
+    - Wifi
+      - Make sure Raspberry PI is on a network reachable to Consul server.
 
 ### Sensor
-  - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/reading-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
+  - Attach to Raspberry PI
+      - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/reading-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
 
 ## Software set up
 ### Raspberry PI
