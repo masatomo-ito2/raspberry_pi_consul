@@ -18,7 +18,11 @@ Demo to install consul on Raspberry Pi. This demo will:
 
 ### Raspberry PI
   - OS install
-    - https://www.raspberrypi.org/downloads/raspbian/
+    - Steps
+        - https://www.raspberrypi.org/documentation/installation/installing-images/
+    - OS images
+        - https://www.raspberrypi.org/downloads/raspbian/
+        
   - Network
     - Wifi
       - Make sure Raspberry PI is on a network reachable to Consul server.
