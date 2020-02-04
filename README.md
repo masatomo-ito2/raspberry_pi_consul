@@ -22,7 +22,7 @@ Demo to install consul on Raspberry Pi. This demo will:
         - https://www.raspberrypi.org/documentation/installation/installing-images/
     - OS images
         - https://www.raspberrypi.org/downloads/raspbian/
-        
+
   - Network
     - Wifi
       - Make sure Raspberry PI is on a network reachable to Consul server.
@@ -32,7 +32,7 @@ Demo to install consul on Raspberry Pi. This demo will:
       - [How to set up sensor](https://www.deviceplus.com/how-tos/raspberrypi-guide/reading-temperature-humidity-and-pressure-with-ae-bme280-and-raspberry-pi/)
 
 ## Software set up
-### Raspberry PI
+### On Raspberry PI
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
   - Run [1.install_software.sh](./scripts_client/1.install_software.sh)
@@ -63,7 +63,7 @@ EOF
 
 
 
-### Consul server
+### On host that runs Consul server
   - Clone this repository
     - `git clone https://github.com/masatomo-ito2/raspberry_pi_consul.git`
 
