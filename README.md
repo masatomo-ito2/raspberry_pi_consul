@@ -141,3 +141,5 @@ Now you can see the data coming from a sensor in Datadog dashboard.
 
 ## Future TODO  
 - [____] Set up datadog dashboard by Terrarorm.
+  - For custom custom metrics
+  - For Consul metrics
